@@ -4,45 +4,44 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
   <title>Shifti Lite</title>
-
-  <!-- iOS 풀스크린 앱 모드 -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="white">
   <meta name="apple-mobile-web-app-title" content="Shifti">
-  <link rel="apple-touch-icon" href="icons/icon-192.png">
-
-  <!-- PWA는 선택 사항 (없어도 UI 뜸) -->
   <meta name="theme-color" content="#0a5bd6">
-
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- SVG 아이콘 스프라이트 로드 -->
+  <div id="sprite" hidden></div>
+
   <header class="appbar">
-    <button class="icon btn-menu" aria-label="메뉴">☰</button>
+    <button class="icon btn-menu" aria-label="메뉴"><svg><use href="#i-menu"/></svg></button>
     <div class="brand">
-      <!-- 간단 로고 -->
-      <svg width="64" height="24" viewBox="0 0 64 24" xmlns="http://www.w3.org/2000/svg" style="height:22px">
-        <circle cx="12" cy="12" r="10" fill="none" stroke="#0a5bd6" stroke-width="3"/>
-        <rect x="8" y="8" width="8" height="8" rx="2" fill="#0a5bd6"/>
-      </svg>
+      <svg class="logo" viewBox="0 0 64 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="3"/><rect x="8" y="8" width="8" height="8" rx="2" fill="currentColor"/></svg>
       <span>Seegene</span>
     </div>
     <div class="actions">
-      <button class="icon" aria-label="메시지">💬</button>
-      <button class="icon" aria-label="알림">🔔</button>
+      <button class="icon" aria-label="메시지"><svg><use href="#i-chat"/></svg></button>
+      <button class="icon" aria-label="알림"><svg><use href="#i-bell"/></svg></button>
     </div>
   </header>
 
   <main id="view"></main>
 
   <nav class="tabbar">
-    <button data-tab="home" class="active">홈</button>
-    <button data-tab="requests">요청</button>
-    <button data-tab="schedule">근무일정</button>
-    <button data-tab="records">출퇴근기록</button>
-    <button data-tab="vacation">휴가</button>
+    <button data-tab="home" class="active"><svg class="tabicon"><use href="#i-home"/></svg><span>홈</span></button>
+    <button data-tab="requests"><svg class="tabicon"><use href="#i-inbox"/></svg><span>요청</span></button>
+    <button data-tab="schedule"><svg class="tabicon"><use href="#i-calendar"/></svg><span>근무일정</span></button>
+    <button data-tab="records"><svg class="tabicon"><use href="#i-clock"/></svg><span>출퇴근기록</span></button>
+    <button data-tab="vacation"><svg class="tabicon"><use href="#i-plane"/></svg><span>휴가</span></button>
   </nav>
 
   <script src="app.js"></script>
+  <script>
+    // 아이콘 스프라이트 동적 주입 (동일 도메인에서 fetch)
+    fetch('icons.svg').then(r=>r.text()).then(svg=>{
+      document.getElementById('sprite').innerHTML = svg;
+    });
+  </script>
 </body>
 </html>

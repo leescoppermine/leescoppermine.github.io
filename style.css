@@ -1,13 +1,11 @@
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;font-family:-apple-system,system-ui,Segoe UI,Roboto,Apple SD Gothic Neo,Pretendard,sans-serif;background:#f3f6fa;color:#111}
+*{box-sizing:border-box}html,body{margin:0;padding:0;font-family:-apple-system,system-ui,Segoe UI,Roboto,Apple SD Gothic Neo,Pretendard,sans-serif;background:#f3f6fa;color:#111}
 :root{--blue:#0a5bd6;--border:#e5ecf3}
-
-.appbar{position:sticky;top:0;height:56px;background:#fff;border-bottom:1px solid var(--border);
-  display:flex;align-items:center;justify-content:space-between;padding:0 12px;z-index:10}
+svg{width:22px;height:22px;display:inline-block;vertical-align:middle;color:#0a5bd6}
+.logo{width:64px;height:22px}
+.appbar{position:sticky;top:0;height:56px;background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 12px;z-index:10}
 .appbar .brand{display:flex;align-items:center;gap:8px;font-weight:700}
-.icon{background:transparent;border:0;font-size:20px}
+.icon{background:transparent;border:0;padding:6px}
 main{padding:12px 12px 84px}
-
 .card{background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 0 rgba(0,0,0,.02);overflow:hidden}
 .card + .card{margin-top:12px}
 .card h3{margin:0;padding:12px 14px;border-bottom:1px solid var(--border);font-size:15px}
@@ -16,26 +14,21 @@ main{padding:12px 12px 84px}
 .btn-primary{background:var(--blue);color:#fff;border:0;border-radius:10px;padding:12px 14px;font-weight:700}
 .btn-ghost{background:#fff;color:#111;border:1px solid var(--border);border-radius:10px;padding:12px 14px}
 .badge{display:inline-block;padding:3px 8px;border-radius:6px;border:1px solid var(--border);background:#f7f9fc;color:#555;font-size:12px}
-
 .week{display:flex;gap:8px;overflow:auto;padding:8px 2px}
 .daypill{min-width:64px;border:1px solid var(--border);background:#fff;border-radius:10px;padding:8px;text-align:center}
 .daypill .label{font-size:12px;color:#888}
 .daypill .time{font-weight:600;margin-top:4px}
 .progress{height:10px;background:#eef3f9;border-radius:999px;overflow:hidden}
 .progress>div{height:100%;background:var(--blue);width:40%}
-
 .dim{color:#7b8a9a;font-size:13px;text-align:center;padding:24px}
-
-.tabbar{position:fixed;bottom:0;left:0;right:0;height:64px;background:#fff;border-top:1px solid var(--border);
-  display:grid;grid-template-columns:repeat(5,1fr)}
-.tabbar button{border:0;background:#fff;font-size:12px;padding:6px 0 10px;color:#536274}
+.tabbar{position:fixed;bottom:0;left:0;right:0;height:64px;background:#fff;border-top:1px solid var(--border);display:grid;grid-template-columns:repeat(5,1fr)}
+.tabbar button{border:0;background:#fff;font-size:11px;padding:4px 0 8px;color:#536274;display:flex;flex-direction:column;align-items:center;gap:2px}
+.tabbar .tabicon{width:22px;height:22px;color:#92a3b5}
 .tabbar button.active{color:var(--blue);font-weight:700}
-.tabbar button::before{content:'';display:block;margin:6px auto 4px;width:22px;height:22px;background:#e8eef7;border-radius:6px}
-
+.tabbar button.active .tabicon{color:var(--blue)}
 .kv{display:flex;gap:8px;align-items:center;margin:6px 0}
 .kv .k{color:#6b7785;width:64px}
 .kv .v{font-weight:600}
-
 .table{width:100%;border-collapse:collapse}
 .table th,.table td{border-bottom:1px solid var(--border);padding:10px 6px;text-align:left}
 .table th{color:#6b7785;font-size:12px}
