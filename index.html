@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <title>출퇴근 기록</title>
+
+  <!-- iOS: standalone app mode -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="출퇴근 기록">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+
+  <!-- PWA manifest & colors -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#0b6efd">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>출퇴근 기록</h1>
+  <div class="controls">
+    <button id="prevWeek" aria-label="이전 주">‹</button>
+    <input type="date" id="pivotDate">
+    <button id="nextWeek" aria-label="다음 주">›</button>
+  </div>
+  <div class="controls">
+    <input id="search" type="search" placeholder="메모/장소 검색…" autocomplete="off">
+    <button id="clearSearch">지우기</button>
+  </div>
+  <div id="summary" class="summary"></div>
+</header>
+
+<main>
+  <ul id="list" class="list" aria-live="polite"></ul>
+</main>
+
+<footer>
+  <small>홈 화면에 추가하면 주소창 없이 전체화면으로 보여요.</small>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
